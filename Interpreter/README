@@ -1,0 +1,79 @@
+Due:
+    test: 1/31/2023 @ 11:59pm
+    code: 2/01/2023 @ 11:59pm
+
+Objectives:
+~~~~~~~~~~~
+
+    - become better at C
+    - become better at writing simple interpreters
+    - work with your peers on a common design problem
+
+Assignment:
+~~~~~~~~~~~
+
+    - Work as a group to define an extension of the language from p1 to include
+      if statements, while loops, and functions.
+    - Donate a test case
+    - Implement an interpreter (in C) for the new language
+
+The language (it's a stretch to call it that):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    - You define it as a group
+
+Important files:
+~~~~~~~~~~~~~~~~
+
+    *.c     C files, feel free to add them, remove them, edit them, etc.
+    *.h     header files, feel free to add them, remove them, edit them, etc.
+
+How to add your test:
+~~~~~~~~~~~~~~~~~~~~~
+
+    To add your test, create 2 files:
+
+       <your CSID>.fun     contains the fun program
+       <your CSID>.ok      contains the expected output
+
+    Don't forget to commit them to git (for example):
+
+       git add <your CSID>.fun <your CSID>.ok # add the files
+       git commit -a -m "added test"          # commit your change locally
+       git push                               # push to server
+    
+Generated files:
+~~~~~~~~~~~~~~~~
+
+    for each test:
+
+        <test>.out    output from running the test
+        <test>.diff   differences between the actual and expected output
+        <test>.result pass/fail
+
+To get notifications (will be sent to <your csid>@cs.utexas.edu):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add an empty file named "spamon" in your project directory. Don't forget
+to "git add", "git commit", "git push"
+
+To run tests:
+~~~~~~~~~~~~~
+
+    make test
+
+To make the output less noisy:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    make -s test
+
+To run one test
+~~~~~~~~~~~~~~~
+
+    make -s t0.test
+
+To run by hand
+~~~~~~~~~~~~~~
+
+    ./p1 < t0.fun
+

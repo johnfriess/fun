@@ -1,0 +1,29 @@
+- Write a program that takes about 60 seconds to run in your interpreter
+  then run the compiled version and measure its execution time.
+
+  * What is the runtime for both versions?
+
+  The runtime for my interpreter was 58 seconds, and the runtime for my compiler was 0.07 seconds.
+
+
+  * Try to explain the difference
+
+  The compiler is much faster than the interpreter since the interpreter is actually responsible for running the code and parsing through line by line after each iteration
+  of a loop. On the other hand, the hardware is responsible for handling the code running in the case of compiled version, which is much more efficient than having 
+  the software be responsible for performing the operations.
+
+
+- Why is it a good idea to "mov $0,%rax" before calling printf?
+
+  It is a good idea to move 0 into %rax because printf is a function that can have variable arguments. The %rax register is expected to contain the amount of variable
+  registers that are used, so if there are four floating point literals used in a printf statement, then the value in the lower 8 bits of %rax, %al, will be set to 4. However,
+  if no floating point literals are used and thus no variable registers are necessary, then %rax should contain 0.
+
+
+- Why does my implementation of p3.c use the "-static" gcc flag? Do your best
+  to explain the reason. Try to remove the flag and see the what happens
+
+  My implementation of p3.c uses the -static gcc flag in order to indicate to the linker that it should copy the binary for the dependencies into the executable file.
+  Calling printf without the -static flag will load the dependencies at runtime instead, trying to dynamically link the dependencies using a displacement relative to the program counter.
+  More specifically, without including the -static gcc flag, the code will compile, but attempting to run it will indicate the symbol printf has caused an overflow error
+  and a segmentation fault as a result because the location for printf in memory is too large.

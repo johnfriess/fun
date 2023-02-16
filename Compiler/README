@@ -1,0 +1,48 @@
+Due date:
+    2/13/2023 @ 11:59pm for test case
+    2/15/2023 @ 11:59pm working code and report
+
+Assignment:
+~~~~~~~~~~~
+
+(1) Answer the questions in REPORT.txt
+
+(2) Add a test case (<csid>.fun, and <csid>.ok, less then 5000 characters each)
+
+     - <csid>.fun contains the fun code
+     - <csid>.ok contains the expected output
+
+(3) Write a compiler for the language from p2 (with some limitations to
+    be discussed and finalized during class)
+
+(4) Make your generated program run as fast as possible.
+
+The command line interface:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+./p3 <name>
+
+The compiler (p3) reads a fun program from stdin and produces the compiled
+output as x86-64 assembly to stdout.
+
+You can compile the assembly to produce an executable
+
+for example:
+
+    ./p3 < t0.fun > t0.s
+    gcc -o t0.run -static t0.s
+    ./t0.run
+
+The Makefile automates those tasks
+
+File names used by the Makefile:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<test>.fun    -- fun program
+<test>.s      -- the equivalent x86-64 assembly
+<test>.run    -- the equivalent x86-64 executable
+<test>.out    -- the output from running <test>.run
+<test>.ok     -- the expected output
+<test>.diff   -- difference between <test>.out and <test>.ok
+<test>.result -- pass/fail
+<test>.time   -- how long it took to run <test>.run

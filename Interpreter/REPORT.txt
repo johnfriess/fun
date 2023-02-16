@@ -1,0 +1,22 @@
+- What is an abstract syntax tree?
+
+An abstract syntax tree is a tree structure used to represent abstract syntax. Each node in the tree represents a token or a construct 
+in the source code. Specifically, the conversion process from an input to generating code involves first tokenizing, then parsing, and finally manipulating. 
+The lower down the tree indicates the syntax that should be performed first, whereas higher up the tree should be performed later after its children
+have already been processed. When an abstract syntax tree is constructed, only the structure and subject matter will be maintained in the tree, while
+everything else is irrelevant.
+
+
+- Why is it useful?
+
+An abstract syntax tree is particularly useful in compilers when storing the representation of source code. Since an abstract syntax tree
+isolates all of the parsing and logic from the actual implementation, it is simple to change and execute the code. Because of this, any manipulation done to the tree
+can be done so in a straightforward and consistent manner without having to worry about syntax issues.
+
+
+- Did you use one in your solution? Explain why/why-not
+
+I did not use one in my solution. I instead used recursion to achieve the same effects as an abstract syntax tree using the idea
+that the higher precedence operations would be processed earlier than the lower precedence operations. The method that I used
+with recursion works by "filtering out" lower precedence expressions earlier in the recursion until it reaches and evaluates the highest precedence expression first,
+such as a literal or identifier. This was easier since a partial implementation for the recursive method was already given and the remaining functions were already outlined.
